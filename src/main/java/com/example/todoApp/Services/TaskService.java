@@ -18,6 +18,11 @@ public class TaskService {
         Task task = taskRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Task not found with id " + id));
 
+        Task task1 = taskRepository.findUserByTitle("Task 1");
+//        Task task1 = taskRepository.findByDescription("Description for Task 1");
+        System.out.println("taks is desc"+ task1);
+
+
         User user = task.getUser();
         UserDto userDto = new UserDto(user.getId(), user.getUsername());
         TaskDto taskDto = new TaskDto(task.getId(), task.getTitle(), task.getDescription(), userDto);

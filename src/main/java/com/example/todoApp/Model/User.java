@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 
@@ -25,6 +27,10 @@ public class User {
 
     @Column(nullable = false)
     private String password;
+
+    @Column
+    @CreationTimestamp
+    private Timestamp timestamp;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
