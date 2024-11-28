@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/")
 public class PublicController {
+    public PublicController() {
+        System.out.println("inside the base package");
+    }
     @GetMapping
     public String getPublic() {
         return "Public route";

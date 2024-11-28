@@ -1,2 +1,4 @@
-package com.example.todoApp.Model;public class Book {
+package com.example.todoApp.Model;
+
+public class Book {
 }
